@@ -1,0 +1,19 @@
+.ch-tree__wrapper {
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.expand-icon__wrapper {
+    display: inline-block;
+    transform: rotateZ(-90deg);
+    cursor: pointer;
+}
+
+.expand-icon__wrapper.expand {
+    transform: rotateZ(0deg);
+}
+
+.expand-icon__wrapper.hidden {
+    visibility: hidden;
+}
