@@ -17,3 +17,7 @@
 .expand-icon__wrapper.hidden {
     visibility: hidden;
 }
+
+.ch-tree-node__content.is-current {
+    background: red;
+}

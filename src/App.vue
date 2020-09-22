@@ -1,12 +1,17 @@
 <template>
   <div>
     <div class="tree__wrapper">
-      <ch-tree :data="data" :expandOnClickNode="true" nodeKey="id"></ch-tree>
+      <ch-tree :data="data"
+               :expandOnClickNode="true"
+               :load="loadNode"
+               nodeKey="id"
+               @node-click="handleNodeClick"></ch-tree>
     </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import { reactive, toRefs } from "vue";
 export default {
   setup() {
@@ -81,11 +86,21 @@ export default {
         { id: 'ii', label: "一级 1ii", type: "first", },
         { id: 'jj', label: "一级 1jj", type: "first", }
       ]
-    }); return { ...toRefs(state) };
+    });
+    const handleNodeClick = (node, data) => {
+      console.log(node, data)
+    }
+    const loadNode = () => {
+
+    }
+    return { ...toRefs(state), handleNodeClick, loadNode };
   }
-}; </script> <style lang="stylus">.tree__wrapper {
+}; 
+</script> <style lang="stylus">
+.tree__wrapper {
   height: 400px;
   width: 200px;
+  overflow: auto;
 }
 
 #app {
