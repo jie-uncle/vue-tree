@@ -35,8 +35,9 @@ export default {
         methods.handleNodeExpand(props.data, !props.data.expanded);
       methods.handleNodeClick(props.data);
     };
+    console.log(props.data._index >= treeState.showArrObj.start &&  props.data._index <= treeState.showArrObj.end && props.data._index)
     return () => (
-      <div class="ch-tree-node" vShow={props.data.visibile}>
+      <div class="ch-tree-node" vShow={props.data.visibile && props.data._index >= treeState.showArrObj.start &&  props.data._index <= treeState.showArrObj.end }>
         <div
           class={nodeContentClass.value}
           style={nodeStyle.value}
